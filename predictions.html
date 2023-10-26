@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{{ url_for('static',filename='style1.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="predictform">
+        <form action="{{ url_for('predict_datapoint')}}" method="post">
+            <input type="text" name="age" placeholder="Age" required="required"/> <br>
+            <input type="text" name="BMI" required="required" placeholder="BMI" /> <br>
+            <input type="text" name="diabetes" required="required" placeholder="diabetes" /> <br>
+            <input type="text" name="Systolic_blood_pressure" required="required" placeholder="Systolic blood pressure" /> <br>
+            <input type="text" name="Diastolic_blood_pressure" required="required" placeholder="Diastolic blood pressure" /> <br>
+            <input type="text" name="Respiratory_rate" required="required" placeholder="Respiratory rate" /> <br>
+            <input type="text" name="heart_rate" required="required" placeholder="heart rate" /> <br>
+            <button type="submit">Predict</button>
+    
+    </form>
+        </div>
+
+        <div id="prediction_text">{{prediction_text}}</div>
+    
+</body>
+</html>
